@@ -17,4 +17,14 @@ int main(int argc, char** argv){
   }
   return 0;
 };
+/*
+  transform.setOrigin( 
+    tf::Vector3(
+        2.0*sin( ros::Time::now().toSec() ), 
+        2.0*cos( ros::Time::now().toSec() ), 
+        0.0
+    ) 
+  );
 
+  transform.setRotation( tf::Quaternion(0, 0, 0, 1) );
+    */
