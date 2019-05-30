@@ -10,4 +10,6 @@
      <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
      <node name="rviz" pkg="rviz" type="rviz" args="-d $(find myrobot1)/rviz/myrobot1.rviz"/>
      <node name="myrobot1_odom" pkg="myrobot1" type="myrobot1_odom.py" output="screen"/>
+
+    
 </launch>
