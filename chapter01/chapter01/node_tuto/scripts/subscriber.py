@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
 import rospy
-from std_msg.msg import String
+from std_msgs.msg import String
 
-def callback(data)
-	rospy.loginfo(rospy.get_caller_id()+"I Heard %s", data.data)
+def callback(msg):
+	rospy.loginfo("I Heard %s", msg.data)
 
-def listener()
+def listener():
 	
 	rospy.init_node('listener', anonymous=True)
 
@@ -15,4 +15,4 @@ def listener()
 	rospy.spin()
 
 if __name__ == '__main__':
-			listener()		
+	listener()		

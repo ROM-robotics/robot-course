@@ -8,7 +8,7 @@ int main(int argc, char ** argv)
 	ros::NodeHandle n;
 	ros::Publisher pub = n.advertise<std_msgs::String>("message",1000);
 
-	ros::Rate r (10);
+	ros::Rate r(10);
 
 	while(ros::ok())
 	{
