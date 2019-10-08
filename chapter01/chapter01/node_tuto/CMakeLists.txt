@@ -223,3 +223,12 @@ target_link_libraries(pubg01_node ${catkin_LIBRARIES})
 add_executable(pubg02_node src/publisher_globel02.cpp)
 add_dependencies(pubg02_node node_tuto_generate_messages_cpp)
 target_link_libraries(pubg02_node ${catkin_LIBRARIES})
+
+add_executable(minpub_node src/minimal_publisher.cpp)
+add_executable(minsub_node src/minimal_subscriber.cpp)
+
+add_dependencies(minpub_node node_tuto_generate_messages_cpp)
+add_dependencies(minsub_node node_tuto_generate_messages_cpp)
+
+target_link_libraries(minpub_node ${catkin_LIBRARIES})
+target_link_libraries(minsub_node ${catkin_LIBRARIES})
