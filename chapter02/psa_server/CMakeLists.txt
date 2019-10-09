@@ -235,3 +235,7 @@ target_link_libraries(srv1 ${catkin_LIBRARIES})
 add_executable(srv2 src/nodeB.cpp)
 add_dependencies(srv2 psa_server_generate_messages_cpp)
 target_link_libraries(srv2 ${catkin_LIBRARIES})
+
+add_executable(class_sample src/ros_class.cpp)
+add_dependencies(class_sample psa_server_generate_messages_cpp)
+target_link_libraries(class_sample ${catkin_LIBRARIES})
