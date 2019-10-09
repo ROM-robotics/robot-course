@@ -32,6 +32,9 @@ void RosClass::init_server()
 void RosClass::sub_callback(const std_msgs::Float32& msg)
 {
 	ROS_INFO_STREAM("I got "<< msg.data << ".");
+	std_msgs::Float32 output_msg;
+	output_msg.data = msg.data;
+	pub_.publish(output_msg);
 }
 bool RosClass::service_callback(std_srvs::TriggerRequest& req,std_srvs::TriggerResponse& res)
 {
