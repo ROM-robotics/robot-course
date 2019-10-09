@@ -50,18 +50,19 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
+ add_message_files(
+   FILES
+   ghost.msg
+   vec.msg
 #   Message2.msg
-# )
+ )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
+  add_service_files(
+   FILES
+   ghostsrv.srv
 #   Service2.srv
-# )
+ )
 
 ## Generate actions in the 'action' folder
  add_action_files(
@@ -210,3 +211,27 @@ target_link_libraries(demo_server ${catkin_LIBRARIES})
 add_executable(demo_client src/demo_client.cpp)
 add_dependencies(demo_client psa_server_generate_messages_cpp)
 target_link_libraries(demo_client ${catkin_LIBRARIES})
+
+add_executable(publish_custom src/publisher_custom_msg.cpp)
+add_dependencies(publish_custom psa_server_generate_messages_cpp)
+target_link_libraries(publish_custom ${catkin_LIBRARIES})
+
+add_executable(subscribe_custom src/subscriber_custom_msg.cpp)
+add_dependencies(subscribe_custom psa_server_generate_messages_cpp)
+target_link_libraries(subscribe_custom ${catkin_LIBRARIES})
+
+add_executable(vec_pub src/vector_publisher.cpp)
+add_dependencies(vec_pub psa_server_generate_messages_cpp)
+target_link_libraries(vec_pub ${catkin_LIBRARIES})
+
+add_executable(vec_sub src/vector_subscriber.cpp)
+add_dependencies(vec_sub psa_server_generate_messages_cpp)
+target_link_libraries(vec_sub ${catkin_LIBRARIES})
+
+add_executable(srv1 src/nodeA.cpp)
+add_dependencies(srv1 psa_server_generate_messages_cpp)
+target_link_libraries(srv1 ${catkin_LIBRARIES})
+
+add_executable(srv2 src/nodeB.cpp)
+add_dependencies(srv2 psa_server_generate_messages_cpp)
+target_link_libraries(srv2 ${catkin_LIBRARIES})
