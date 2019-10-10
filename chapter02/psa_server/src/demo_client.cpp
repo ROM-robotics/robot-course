@@ -13,6 +13,7 @@ int main(int argc,char** argv)
 		return -1;
 	}
 	actionlib::SimpleActionClient<psa_server::demoAction> ac("demo_action",true);
+
 	ROS_INFO("Waiting for action server ...");
 
 	ac.waitForServer();
@@ -20,6 +21,7 @@ int main(int argc,char** argv)
 	goal.count=atoi(argv[1]);
 
 	ROS_INFO("Sending goal %d and preempt time of %d",goal.count,atoi(argv[2]) );
+	
 	ac.sendGoal(goal);
 
 	bool status = ac.waitForResult(ros::Duration(atoi(argv[2])));

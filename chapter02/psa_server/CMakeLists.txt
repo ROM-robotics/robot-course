@@ -236,3 +236,7 @@ add_executable(srv2 src/nodeB.cpp)
 add_dependencies(srv2 psa_server_generate_messages_cpp)
 target_link_libraries(srv2 ${catkin_LIBRARIES})
 
+add_executable(param src/param_test.cpp)
+add_dependencies(param psa_server_generate_messages_cpp)
+target_link_libraries(param ${catkin_LIBRARIES})
+

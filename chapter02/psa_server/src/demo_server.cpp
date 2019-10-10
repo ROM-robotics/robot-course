@@ -5,7 +5,7 @@
 #include <iostream>
 #include <sstream>
 
-class DemoAction{
+class GhostMan{
 protected:
 	ros::NodeHandle nh;
 	actionlib::SimpleActionServer<psa_server::demoAction> as;
@@ -17,14 +17,14 @@ protected:
 	int goal;
 	int progress;
 public:
-	DemoAction(std::string name) : as(
+	GhostMan(std::string name) : as(
 		nh,
 		name,
-		boost::bind(&DemoAction::executeCB,this,_1),
+		boost::bind(&GhostMan::executeCB,this,_1),
 		false),
 	action_name(name)
 	{
-		as.registerPreemptCallback(boost::bind(&DemoAction::preemptCB,this));
+		as.registerPreemptCallback(boost::bind(&GhostMan::preemptCB,this));
 		as.start();
 	}
 
@@ -71,9 +71,10 @@ public:
 
 int main(int argc,char** argv)
 {
-	ros::init(argc,argv,"demo_action");
+	ros::init(argc,argv,"demo_server");
 	ROS_INFO("Starting Action server");
-	DemoAction da(ros::this_node::getName());
+	//GhostMan gm(ros::this_node::getName());
+	GhostMan gm("demo_action");
 	ros::spin();
 	return 0;
 }
