@@ -1,6 +1,8 @@
 #include <ros/ros.h>
 #include "psa_server/vec.h"
 
+
+
 void callback(const psa_server::vec &msg)
 {
 	std::vector <double> vec_of_doubles = msg.x;
