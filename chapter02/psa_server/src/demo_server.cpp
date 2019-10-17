@@ -24,6 +24,7 @@ public:
 		false),
 	action_name(name)
 	{
+
 		as.registerPreemptCallback(boost::bind(&GhostMan::preemptCB,this));
 		as.start();
 	}
@@ -64,7 +65,7 @@ public:
 			}
 			r.sleep();
 		}
-	}
+	}// end exeCB
 
 };
 

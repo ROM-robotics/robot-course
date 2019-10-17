@@ -4,7 +4,7 @@
 int main(int argc, char ** argv)
 {
 	ros::init(argc,argv, "add_intenger_client");
-	ros::NodeHandle nh;
+	ros::NodeHandle nh();
 	ros::ServiceClient client = nh.serviceClient<psa_server::ghostsrv> ("add_3_ints");
 
 	psa_server::ghostsrv srv;

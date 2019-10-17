@@ -15,6 +15,7 @@ private:
 	ros::Publisher pub_;
 	ros::Subscriber sub_;
 	ros::ServiceServer server_;
+	
 
 	void init_subscriber();
 	void init_publisher();

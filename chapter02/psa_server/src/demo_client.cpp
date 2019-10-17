@@ -9,7 +9,7 @@ int main(int argc,char** argv)
 	ros::init(argc,argv,"demo_client");
 	if(argc != 3)
 	{
-		ROS_WARN("Usage: demo_client <goal> <time_to_preempt>");
+		ROS_WARN("Usage: rosrun psa_server demo_client <goal> <time_to_preempt>");
 		return -1;
 	}
 	actionlib::SimpleActionClient<psa_server::demoAction> ac("demo_action",true);

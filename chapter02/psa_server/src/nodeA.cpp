@@ -16,6 +16,7 @@ int main(int argc, char ** argv)
 	ros::init(argc,argv, "add_intenger_server");
 	ros::NodeHandle nh;
 	ros::ServiceServer service = nh.advertiseService ("add_3_ints",add);
+	
 	ROS_INFO("Ready to add!");
 	ros::spin();
 	
