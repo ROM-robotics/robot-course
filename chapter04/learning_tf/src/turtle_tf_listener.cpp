@@ -9,13 +9,11 @@ int main(int argc, char** argv){
   ros::NodeHandle node;
 
   ros::service::waitForService("spawn");
-  ros::ServiceClient add_turtle =
-    node.serviceClient<turtlesim::Spawn>("spawn");
+  ros::ServiceClient add_turtle = node.serviceClient<turtlesim::Spawn>("spawn");
   turtlesim::Spawn srv;
   add_turtle.call(srv);
 
-  ros::Publisher turtle_vel =
-    node.advertise<geometry_msgs::Twist>("turtle2/cmd_vel", 10);
+  ros::Publisher turtle_vel = node.advertise<geometry_msgs::Twist>("turtle2/cmd_vel", 10);
 
   tf::TransformListener listener;
 

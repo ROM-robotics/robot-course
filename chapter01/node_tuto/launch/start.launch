@@ -1,4 +1,4 @@
 <launch>
-	<node pkg="node_tuto" name="x" type="pub_node"/>
-	<node pkg="node_tuto" name="y" type="sub_node"/>
+	<node pkg="node_tuto" name="y" type="pub_node"/>
+	<node pkg="node_tuto" name="x" type="sub_node"/>
 </launch>

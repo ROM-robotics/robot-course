@@ -9,10 +9,12 @@ int main(int argc, char ** argv)
 	ros::Publisher pub = n.advertise<std_msgs::String>("message",1000);
 
 	ros::Rate r(10);
+	
+	std_msgs::String msg;
 
 	while(ros::ok())
 	{
-		std_msgs::String msg;
+		
 		std::stringstream ss;
 		ss<<"I am Publisher node !";
 		msg.data=ss.str();
