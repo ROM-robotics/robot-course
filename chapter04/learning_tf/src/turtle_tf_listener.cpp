@@ -21,16 +21,19 @@ int main(int argc, char** argv){
   while (node.ok()){
     tf::StampedTransform transform;
     try{
-    	//listener.waitForTransform("/turtle2", "/turtle1",ros::Time(0), ros::Duration(10.0));
-    	listener.lookupTransform("/turtle2", "/carrot1",ros::Time(0), transform);
-    	//listener.lookupTransform("/turtle2", "/turtle1",ros::Time(0), transform);
+      ros::Time now=ros::Time::now();
+      ros::Time past=ros::Time::now() - ros::Duration(5.0);
+      listener.waitForTransform("/turtle2",now, "/turtle1",past,"/world", ros::Duration(1.0));      
+      listener.lookupTransform("/turtle2",now, "/turtle1",past, "/world",transform);
+    	//listener.waitForTransform("/turtle2",now, "/turtle1",past, ros::Duration(1.0));
+    	//listener.lookupTransform("/turtle2", "/carrot1",ros::Time(0), transform);
+    	//listener.lookupTransform("/turtle2",now, "/turtle1",past, transform);
     }
     catch (tf::TransformException &ex) {
       ROS_ERROR("%s",ex.what());
       ros::Duration(1.0).sleep();
       continue;
     }
-
     geometry_msgs::Twist vel_msg;
     vel_msg.angular.z = 4.0 * atan2(transform.getOrigin().y(),
                                     transform.getOrigin().x());

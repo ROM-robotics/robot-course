@@ -1,0 +1,44 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"batterybox" [label="batterybox"];
+"castdrop_left" [label="castdrop_left"];
+"brackettop_left" [label="brackettop_left"];
+"bracketside1_left" [label="bracketside1_left"];
+"left_casterwheel" [label="left_casterwheel"];
+"bracketside2_left" [label="bracketside2_left"];
+"castdrop_right" [label="castdrop_right"];
+"brackettop_right" [label="brackettop_right"];
+"bracketside1_right" [label="bracketside1_right"];
+"right_casterwheel" [label="right_casterwheel"];
+"bracketside2_right" [label="bracketside2_right"];
+"left_wheel" [label="left_wheel"];
+"right_wheel" [label="right_wheel"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "batterytobase" [label="xyz: -0.05 0 0.22 \nrpy: 0 -0 0"]
+"batterytobase" -> "batterybox"
+"base_link" -> "cast2base_left" [label="xyz: -0.52705 0.20955 0.2875 \nrpy: 0 -0 0"]
+"cast2base_left" -> "castdrop_left"
+"castdrop_left" -> "cast2bracket_left" [label="xyz: 0 0 -0.0625 \nrpy: 0 -0 1.5708"]
+"cast2bracket_left" -> "brackettop_left"
+"brackettop_left" -> "brack2top1_left" [label="xyz: 0.05875 0.04 -0.06 \nrpy: 0 -0 0"]
+"brack2top1_left" -> "bracketside1_left"
+"bracketside1_left" -> "left_caster_joint" [label="xyz: -0.0613 0.053 -0.053 \nrpy: 0 1.5708 -0"]
+"left_caster_joint" -> "left_casterwheel"
+"brackettop_left" -> "brack2top2_left" [label="xyz: -0.05875 0.04 -0.06 \nrpy: 0 -0 0"]
+"brack2top2_left" -> "bracketside2_left"
+"base_link" -> "cast2base_right" [label="xyz: -0.52705 -0.20955 0.2875 \nrpy: 0 -0 0"]
+"cast2base_right" -> "castdrop_right"
+"castdrop_right" -> "cast2bracket_right" [label="xyz: 0 0 -0.0625 \nrpy: 0 -0 1.5708"]
+"cast2bracket_right" -> "brackettop_right"
+"brackettop_right" -> "brack2top1_right" [label="xyz: 0.05875 0.04 -0.06 \nrpy: 0 -0 0"]
+"brack2top1_right" -> "bracketside1_right"
+"bracketside1_right" -> "right_caster_joint" [label="xyz: -0.0613 0.053 -0.053 \nrpy: 0 1.5708 -0"]
+"right_caster_joint" -> "right_casterwheel"
+"brackettop_right" -> "brack2top2_right" [label="xyz: -0.05875 0.04 -0.06 \nrpy: 0 -0 0"]
+"brack2top2_right" -> "bracketside2_right"
+"base_link" -> "left_wheel_joint" [label="xyz: 0 0.282575 0.1651 \nrpy: 0 1.5708 1.5708"]
+"left_wheel_joint" -> "left_wheel"
+"base_link" -> "right_wheel_joint" [label="xyz: 0 -0.282575 0.1651 \nrpy: 0 1.5708 1.5708"]
+"right_wheel_joint" -> "right_wheel"
+}
