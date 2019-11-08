@@ -1,10 +1,9 @@
 #include "ros/ros.h"
-#include "std_msgs/String.h"
-#include <sstream>
+#include "std_msgs/Int32.h"
 
-void callback(const std_msgs::String::ConstPtr &msg)
+void callback(const std_msgs::Int32 &msg)
 {
-	ROS_INFO("I Heard [%s]", msg->data.c_str());
+	ROS_INFO("I Heard [%d]", msg.data);
 }
 
 int main(int argc, char ** argv)
