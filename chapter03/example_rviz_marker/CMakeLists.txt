@@ -107,7 +107,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES example_rviz_marker
+  LIBRARIES example_rviz_marker
   CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs visualization_msgs message_runtime
 #  DEPENDS system_lib
 )
@@ -200,11 +200,12 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+
 add_executable(example_rviz_marker src/example_rviz_marker.cpp)
 target_link_libraries(example_rviz_marker ${catkin_LIBRARIES})
 
-add_executable(example_rviz_line_markers src/example_rviz_line_markers.cpp)
-target_link_libraries(example_rviz_line_markers ${catkin_LIBRARIES})
+
 
 add_executable(triad_display src/triad_display.cpp)
 target_link_libraries(triad_display ${catkin_LIBRARIES})
@@ -217,3 +218,6 @@ target_link_libraries(triad_display_test_node ${catkin_LIBRARIES})
 
 add_executable(linesegs_display_test_node src/linesegs_display_test_node.cpp)
 target_link_libraries(linesegs_display_test_node ${catkin_LIBRARIES})
+
+
+
