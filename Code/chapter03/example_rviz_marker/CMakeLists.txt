@@ -201,20 +201,20 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(example_rviz_marker src/example_rviz_marker.cpp)
-target_link_libraries(example_rviz_marker ${catkin_LIBRARIES})
+# add_executable(example_rviz_marker src/example_rviz_marker.cpp)
+# target_link_libraries(example_rviz_marker ${catkin_LIBRARIES})
 
-add_executable(example_rviz_line_markers src/example_rviz_line_markers.cpp)
-target_link_libraries(example_rviz_line_markers ${catkin_LIBRARIES})
+# add_executable(example_rviz_line_markers src/example_rviz_line_markers.cpp)
+# target_link_libraries(example_rviz_line_markers ${catkin_LIBRARIES})
 
-add_executable(triad_display src/triad_display.cpp)
-target_link_libraries(triad_display ${catkin_LIBRARIES})
+# add_executable(triad_display src/triad_display.cpp)
+# target_link_libraries(triad_display ${catkin_LIBRARIES})
 
-add_executable(lines_display src/lines_display.cpp)
-target_link_libraries(lines_display ${catkin_LIBRARIES})
+# add_executable(lines_display src/lines_display.cpp)
+# target_link_libraries(lines_display ${catkin_LIBRARIES})
 
-add_executable(triad_display_test_node src/triad_display_test_node.cpp)
-target_link_libraries(triad_display_test_node ${catkin_LIBRARIES})
+# add_executable(triad_display_test_node src/triad_display_test_node.cpp)
+# target_link_libraries(triad_display_test_node ${catkin_LIBRARIES})
 
 add_executable(linesegs_display_test_node src/linesegs_display_test_node.cpp)
 target_link_libraries(linesegs_display_test_node ${catkin_LIBRARIES})
