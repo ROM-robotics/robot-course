@@ -1,3 +1,5 @@
+sudo apt upgrade
+
 Install this pkgs <br>
 ****************** <br>
 sudo apt-get install ros-kinetic-kobuki-gazebo-plugins <br>
